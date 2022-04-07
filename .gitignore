@@ -1,0 +1,31 @@
+/GBombTest/.settings
+/GBombTest/.classpath
+/GBombTest/.project
+/GBombTest/target
+/GBombTest/bin
+
+/GBombExperimentApp/
+# Logs
+/GBombExperimentApp/logs
+/GBombExperimentApp/*.log
+/GBombExperimentApp/npm-debug.log*
+/GBombExperimentApp/yarn-debug.log*
+/GBombExperimentApp/yarn-error.log*
+/GBombExperimentApp/pnpm-debug.log*
+/GBombExperimentApp/lerna-debug.log*
+
+/GBombExperimentApp/node_modules
+/GBombExperimentApp/dist
+/GBombExperimentApp/dist-ssr
+/GBombExperimentApp/*.local
+
+# Editor directories and files
+/GBombExperimentApp/.vscode/*
+/GBombExperimentApp/!.vscode/extensions.json
+/GBombExperimentApp/.idea
+/GBombExperimentApp/.DS_Store
+/GBombExperimentApp/*.suo
+/GBombExperimentApp/*.ntvs*
+/GBombExperimentApp/*.njsproj
+/GBombExperimentApp/*.sln
+/GBombExperimentApp/*.sw?

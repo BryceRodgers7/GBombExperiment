@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Search for a Game</h1>
+    <form action="#" th:action="@{/search}" th:object="${search}" method="post">
+    	<p>search games by name: <input type="text" th:field="*{query}" /></p>
+        <p><input type="submit" name="action" value="search" />Search</p>
+        <button type="submit" name="action" value="stored">See Rented Games</button>
+    </form>
+    <!-- <h1>Stored Games</h1>
+	    <p th:each="game : ${games}"
+    	   th:text="${game.name}">A Game Name</p>
+    <a href="/search">Submit another message</a>  -->
+</body>
+</html>

@@ -46,6 +46,8 @@ export namespace GBombGameFetcher {
         `&query=${encodedQuery}` +
         `&page=${pageNumber}`;
 
+      console.log(`the query is ${url}`);
+
       const response = await fetchJsonp(url, {
         jsonpCallback: "json_callback",
       });

@@ -2,12 +2,17 @@ import * as React from "react";
 import logo from "../../logo.svg";
 import "../../App.css";
 import { Footer } from "../../components/Footer";
-import { GBombGameFetcher } from "./gBombGameFetcher";
+import { GBombGame, GBombGameFetcher } from "./gBombGameFetcher";
 import { TextInput } from "../../components/TextInput";
+import "./styles.css";
+import { GBombGameTable } from "./GBombGameTable";
 
 export function SearchPage() {
   const [count, setCount] = React.useState(readCountFromStorage());
   const [searchText, setSearchText] = React.useState("");
+  const [allGamesWithName, setAllGamesWithName] = React.useState<GBombGame[]>(
+    []
+  );
 
   // Persist any count changes to sessionStorage
   React.useEffect(() => {
@@ -15,6 +20,7 @@ export function SearchPage() {
   }, [count]);
 
   const onFeelingLuckyClick = async () => {
+    console.log(`search clicked`);
     const response = await GBombGameFetcher.fetchAllGames(searchText);
 
     if (!response) {
@@ -23,6 +29,7 @@ export function SearchPage() {
     }
 
     console.log("All games", response);
+    setAllGamesWithName(response);
   };
 
   return (
@@ -36,7 +43,6 @@ export function SearchPage() {
           </button>
           <br />
           <br />
-
           <TextInput
             value={searchText}
             onChange={(event) => setSearchText(event.target.value)}
@@ -44,12 +50,11 @@ export function SearchPage() {
           />
           <br />
           <br />
-
           <button type="button" onClick={onFeelingLuckyClick}>
             Search For Games!
           </button>
+          <GBombGameTable games={allGamesWithName} />
         </p>
-
         <Footer />
       </header>
     </div>

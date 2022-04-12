@@ -4,7 +4,6 @@
 /GBombTest/target
 /GBombTest/bin
 
-/GBombExperimentApp/
 # Logs
 /GBombExperimentApp/logs
 /GBombExperimentApp/*.log
